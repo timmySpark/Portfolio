@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Timmy Portfolio</title>
+    <title>Erinle Timilehin</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Timmy's portfolio" name="keywords" />
     <meta content="timmy's portfolio" name="description" />
@@ -65,60 +65,22 @@
                   I am a Freelance web Developer and UI/Ux Designer based in Abeokuta , i like Designing , Art , playing music and sports . I am a web developer, i work with Html , Css , Javascript . I also work with Java , Kotlin.
                 </p>
               </div>
-              {% comment %} create skill model {% endcomment %}
               <div class="skills">
+                {% for skill in skills  %}
                 <div class="skill-name">
-                  <p>Web Design</p>
-                  <p>85%</p>
+                  <p>{{skill.name}}</p>
+                  <p>{{skill.skill_percent}}%</p>
                 </div>
                 <div class="progress">
                   <div
                     class="progress-bar"
                     role="progressbar"
-                    aria-valuenow="85"
+                    aria-valuenow="{{skill.skill_percent}}"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   ></div>
                 </div>
-                <div class="skill-name">
-                  <p>Web Development</p>
-                  <p>90%</p>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <div class="skill-name">
-                  <p>Saxophonist</p>
-                  <p>70%</p>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="90"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-                <div class="skill-name">
-                  <p>Mobile Apps Development</p>
-                  <p>85%</p>
-                </div>
-                <div class="progress">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="85"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
+                {% endfor %}
               </div>
               <a class="btn rounded" href="">Learn More</a>
             </div>
@@ -174,7 +136,7 @@
                 <i class="fab fa-android"></i>
               </div>
               <div class="service-text">
-                <h3>Saxophonist</h3>
+                <h3>UI/UX Development</h3>
                 <p>
                   Lorem ipsum dolor sit amet elit. Phase nec preti mi. Curabi
                   facilis ornare velit non
@@ -201,96 +163,48 @@
     </div>
     <!-- Service End -->
 
-    <!-- Experience Start -->
+{% comment %} still needs editing {% endcomment %}
+    <!-- Education Start -->
     <div class="experience" id="experience">
       <div class="container">
         <header
           class="section-header text-center wow zoomIn"
           data-wow-delay="0.1s"
         >
-          <p>My Resume</p>
-          <h2>Working Experience</h2>
+          <p>My Education</p>
+          <h2>Education</h2>
         </header>
         <div class="timeline">
-          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+          {% for e in education  %}
+           <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
             <div class="timeline-text">
-              <div class="timeline-date">2045 - 2050</div>
-              <h2>Web Developer</h2>
-              <h4>Soft Agency, San Francisco, CA</h4>
+              <div class="timeline-date">{{e.duration}}</div>
+              <h2>{{e.course_Name}}</h2>
+              <h4>{{e.school_Name}} </h4>
               <p>
-                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
-                erat sagittis non. Ut blandit semper pretium.
+                {{e.description}}
               </p>
             </div>
           </div>
-          <div
+         <div
             class="timeline-item right wow slideInRight"
             data-wow-delay="0.1s"
           >
-            <div class="timeline-text">
-              <div class="timeline-date">2045 - 2050</div>
-              <h2>Web Designer</h2>
-              <h4>Soft Agency, San Francisco, CA</h4>
-              <p>
-                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
-                erat sagittis non. Ut blandit semper pretium.
-              </p>
-            </div>
+          <div class="timeline-text">
+            <div class="timeline-date">{{e.duration}}</div>
+            <h2>{{e.course_Name}}</h2>
+            <h4>{{e.school_Name}} </h4>
+            <p>
+              {{e.description}}
+            </p>
+          </div> 
           </div>
-          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-            <div class="timeline-text">
-              <div class="timeline-date">2045 - 2050</div>
-              <h2>UI/UX Designer</h2>
-              <h4>Soft Agency, San Francisco, CA</h4>
-              <p>
-                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
-                erat sagittis non. Ut blandit semper pretium.
-              </p>
-            </div>
-          </div>
-          <div
-            class="timeline-item right wow slideInRight"
-            data-wow-delay="0.1s"
-          >
-            <div class="timeline-text">
-              <div class="timeline-date">2045 - 2050</div>
-              <h2>Mobile App Developer</h2>
-              <h4>Soft Agency, San Francisco, CA</h4>
-              <p>
-                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
-                erat sagittis non. Ut blandit semper pretium.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-            <div class="timeline-text">
-              <div class="timeline-date">2045 - 2050</div>
-              <h2>Web Developer</h2>
-              <h4>Soft Agency, San Francisco, CA</h4>
-              <p>
-                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
-                erat sagittis non. Ut blandit semper pretium.
-              </p>
-            </div>
-          </div>
-          <div
-            class="timeline-item right wow slideInRight"
-            data-wow-delay="0.1s"
-          >
-            <div class="timeline-text">
-              <div class="timeline-date">2045 - 2050</div>
-              <h2>Web Developer</h2>
-              <h4>Soft Agency, San Francisco, CA</h4>
-              <p>
-                Lorem ipsum dolor sit amet elit. Aliquam odio dolor, id luctus
-                erat sagittis non. Ut blandit semper pretium.
-              </p>
-            </div>
+          {% endfor %}
           </div>
         </div>
       </div>
     </div>
-    <!-- Job Experience End -->
+    <!-- Education End -->
 
     <!-- Portfolio Start -->
     <div class="portfolio" id="portfolio">
@@ -322,7 +236,7 @@
                 <img src="{% static 'img/portfolio-1.jpg' %}" alt="Image" />
               </div>
               <div class="portfolio-text">
-                <h3>eCommerce Website</h3>
+                <h3>eCommerce Website</h3>                
                 <a
                   class="btn"
                   href="{% static 'img/portfolio-1.jpg' %}"
@@ -431,6 +345,8 @@
       </div>
     </div>
     <!-- Portfolio End -->
+{% comment %} still needs editing {% endcomment %}
+
 
     <!-- Testimonial Start -->
     <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
@@ -439,49 +355,20 @@
           <i class="fa fa-quote-left"></i>
         </div>
         <div class="owl-carousel testimonials-carousel">
-          <div class="testimonial-item">
-            {% comment %} add to model {% endcomment %}
+          {% for t in testimonial  %}
+           <div class="testimonial-item">
             <div class="testimonial-img">
-              <img src="{% static 'img/testimonial-1.jpg' %}" alt="Image" />
+              <img src="{{t.customerImage.url}}" alt="Image" />
             </div>
             <div class="testimonial-text">
               <p>
-                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
-                lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum
-                dolor sit amet consec adipis elit.
+               {{t.customerComment}}
               </p>
-              <h3>Customer Name</h3>
-              <h4>Profession</h4>
+              <h3>{{t.customerName}}</h3>
+              <h4>{{t.customerProfession}}</h4>
             </div>
           </div>
-          <div class="testimonial-item">
-            <div class="testimonial-img">
-              <img src="{% static 'img/testimonial-2.jpg' %}" alt="Image" />
-            </div>
-            <div class="testimonial-text">
-              <p>
-                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
-                lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum
-                dolor sit amet consec adipis elit.
-              </p>
-              <h3>Customer Name</h3>
-              <h4>Profession</h4>
-            </div>
-          </div>
-          <div class="testimonial-item">
-            <div class="testimonial-img">
-              <img src="{% static 'img/testimonial-3.jpg' %}" alt="Image" />
-            </div>
-            <div class="testimonial-text">
-              <p>
-                Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
-                lacus eget velit tincid, quis suscip justo dictum. Lorem ipsum
-                dolor sit amet consec adipis elit.
-              </p>
-              <h3>Customer Name</h3>
-              <h4>Profession</h4>
-            </div>
-          </div>
+          {% endfor %} 
         </div>
       </div>
     </div>
