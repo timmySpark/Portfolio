@@ -42,4 +42,22 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.customerName 
 
+
+class Contacts(models.Model):
+    name = models.CharField(max_length=300)
+    email = models.EmailField()
+    subject = models.CharField(max_length=300)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = ("Contact")
+        verbose_name_plural = ("Contacts")
+
+    def __str__(self):
+        return self.name
+
+    
+
+
     
