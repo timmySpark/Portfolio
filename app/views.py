@@ -7,7 +7,8 @@ from app.forms import *
 
 def Home(request):
     template_name = "index.html"
-    skills = Skills.objects.all()
+    skills = Skills.objects.all().order_by('-skill_percent')
+    service = Service.objects.all()
     education = Education.objects.all()
     testimonials = Testimonial.objects.all()
     contactform = ContactForm()
@@ -15,10 +16,16 @@ def Home(request):
         contactform = ContactForm(request.POST or None)
         if contactform.is_valid():
             contactform.save()
+            return redirect('/')
+        else:
+            contactform.add_error("email", "please try again")
             
+    else:
+        contactform = ContactForm()       
     
     context = {
         "skills":skills,
+        "services":service,
         "education":education,
         "testimonial":testimonials,
         "form": contactform,

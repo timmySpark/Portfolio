@@ -890,10 +890,41 @@ a:focus {
   transform: scale(1.1);
   transition: 0.5s;
 }
+.portfolio-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+
+.preview-btn{
+  position: absolute;
+  width: 200px;
+  top: 50%;
+  left:20%;
+  text-align: center;
+  background: transparent;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
 
 .portfolio .portfolio-item:hover img {
   margin-left: 15px;
 
+}
+
+.portfolio .portfolio-item:hover .portfolio-img .portfolio-overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+
+.portfolio .portfolio-item:hover .portfolio-img .preview-btn{
+  opacity:1
 }
 
 .portfolio .portfolio-text {
@@ -912,7 +943,7 @@ a:focus {
   font-size: 18px;
   font-weight: 600;
   margin: 0 0 0 15px;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
 }
 

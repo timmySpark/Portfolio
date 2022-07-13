@@ -11,6 +11,20 @@ class Skills(models.Model):
         verbose_name_plural = ("Skills")
 
     def __str__(self):
+        return f"{self.name} --- {self.skill_percent}"
+
+
+class Service(models.Model):
+    icon_name = models.CharField(max_length=45)
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    
+
+    class Meta:
+        verbose_name = ("Service")
+        verbose_name_plural = ("Services")
+
+    def __str__(self):
         return self.name
 
 
@@ -25,7 +39,7 @@ class Education(models.Model):
         verbose_name_plural = ("Educations")
 
     def __str__(self):
-        return self.course_Name 
+        return f"{self.course_Name} ----- {self.duration}"
 
    
 class Testimonial(models.Model):
@@ -40,7 +54,7 @@ class Testimonial(models.Model):
         verbose_name_plural = ("Testimonials")
 
     def __str__(self):
-        return self.customerName 
+        return f"{self.customerName } ---- {self.customerProfession}" 
 
 
 class Contacts(models.Model):
@@ -55,7 +69,7 @@ class Contacts(models.Model):
         verbose_name_plural = ("Contacts")
 
     def __str__(self):
-        return self.name
+        return f"{self.name} --- {self.email}"
 
     
 
