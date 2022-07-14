@@ -41,7 +41,33 @@ class Education(models.Model):
     def __str__(self):
         return f"{self.course_Name} ----- {self.duration}"
 
-   
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    
+    class Meta:
+        verbose_name = ("Category")
+        verbose_name_plural = ("Categories")
+
+    def __str__(self):
+        return self.name
+
+
+class Project(models.Model):
+    name = models.CharField(max_length= 300)
+    image =models.ImageField(upload_to='ProjectImages/')
+    languages = models.CharField(max_length= 500)
+    previewlink = models.URLField()
+    category= models.ForeignKey(Category, on_delete=models.CASCADE)
+    
+
+    class Meta:
+        verbose_name = ("Project")
+        verbose_name_plural =("Projects")
+
+    def __str__(self):
+        return self.name
+
+
 class Testimonial(models.Model):
 
     customerName = models.CharField(max_length=300)
