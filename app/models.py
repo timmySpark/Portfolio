@@ -65,7 +65,7 @@ class Project(models.Model):
         verbose_name_plural =("Projects")
 
     def __str__(self):
-        return self.name
+        return  f"{self.name} --- {self.category}"
 
 
 class Testimonial(models.Model):

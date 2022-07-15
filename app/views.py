@@ -10,6 +10,8 @@ def Home(request):
     skills = Skills.objects.all().order_by('-skill_percent')
     service = Service.objects.all()
     education = Education.objects.all()
+    category = Category.objects.all()
+    projects = Project.objects.all()
     testimonials = Testimonial.objects.all()
     contactform = ContactForm()
     if request.method == 'POST':
@@ -27,6 +29,8 @@ def Home(request):
         "skills":skills,
         "services":service,
         "education":education,
+        "categories":category,
+        "projects":projects,
         "testimonial":testimonials,
         "form": contactform,
     }
