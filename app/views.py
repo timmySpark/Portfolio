@@ -26,6 +26,8 @@ def Home(request):
         contactform = ContactForm()       
     
     context = {
+        "title":"Erinle Timilehin",
+        "about":"I am a Detail-oriented , organized and meticulous Software Engineer with background working productivity in dynamic environments. Fluent in JavaScript , Kotlin and Python programming languages used to develop software within the tech industry , I work at a fast pace to meet tight deadlines. I'm also a Sports Lover , i play football , Table tennis , i also like photography  and i play musical instruments.",
         "skills":skills,
         "services":service,
         "education":education,
@@ -35,3 +37,4 @@ def Home(request):
         "form": contactform,
     }
     return render(request,template_name,context)
+    

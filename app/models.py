@@ -13,7 +13,6 @@ class Skills(models.Model):
     def __str__(self):
         return f"{self.name} --- {self.skill_percent}"
 
-
 class Service(models.Model):
     icon_name = models.CharField(max_length=45)
     name = models.CharField(max_length=100)
@@ -27,12 +26,13 @@ class Service(models.Model):
     def __str__(self):
         return self.name
 
-
 class Education(models.Model):
     course_Name = models.CharField(max_length=500)
     school_Name = models.CharField(max_length=500)
     description = models.TextField()
     duration = models.CharField(max_length=500)
+    direction = models.CharField(max_length=100 ,default="slideinLeft")
+    slide = models.CharField(max_length=500 , default="left")
     
     class Meta:
         verbose_name = ("Education")
@@ -46,11 +46,10 @@ class Category(models.Model):
     
     class Meta:
         verbose_name = ("Category")
-        verbose_name_plural = ("Categories")
+        verbose_name_plural = ("CategorIes")
 
     def __str__(self):
         return self.name
-
 
 class Project(models.Model):
     name = models.CharField(max_length= 300)
@@ -67,7 +66,6 @@ class Project(models.Model):
     def __str__(self):
         return  f"{self.name} --- {self.category}"
 
-
 class Testimonial(models.Model):
 
     customerName = models.CharField(max_length=300)
@@ -81,7 +79,6 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f"{self.customerName } ---- {self.customerProfession}" 
-
 
 class Contacts(models.Model):
     name = models.CharField(max_length=300)

@@ -7,7 +7,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Erinle Timilehin</title>
+    <title>{{title}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="Timmy's portfolio" name="keywords" />
     <meta content="timmy's portfolio" name="description" />
@@ -64,10 +64,7 @@
                 <h2>2 Years Experience</h2>
               </div>
               <div class="about-text">
-                <p>
-                  {% comment %} add text about me {% endcomment %} 
-                  I am a Freelance web Developer and UI/Ux Designer based in Abeokuta , i like Designing , Art , playing music and sports . I am a web developer, i work with Html , Css , Javascript . I also work with Java , Kotlin.
-                </p>
+                <p> {{about}} </p>
               </div>
               <div class="skills">
                 {% for skill in skills  %}
@@ -125,7 +122,6 @@
     </div>
     <!-- Service End -->
 
-{% comment %} still needs editing {% endcomment %}
     <!-- Education Start -->
     <div class="experience" id="experience">
       <div class="container">
@@ -138,7 +134,7 @@
         </header>
         <div class="timeline">
           {% for e in education  %}
-           <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+           <div class="timeline-item {{e.direction}} wow {{e.slide}}" data-wow-delay="0.1s">
             <div class="timeline-text">
               <div class="timeline-date">{{e.duration}}</div>
               <h2>{{e.course_Name}}</h2>
@@ -148,22 +144,9 @@
               </p>
             </div>
           </div>
-         <div
-            class="timeline-item right wow slideInRight"
-            data-wow-delay="0.1s"
-          >
-          <div class="timeline-text">
-            <div class="timeline-date">{{e.duration}}</div>
-            <h2>{{e.course_Name}}</h2>
-            <h4>{{e.school_Name}} </h4>
-            <p>
-              {{e.description}}
-            </p>
-          </div> 
-          </div>
           {% endfor %}
           </div>
-        </div>
+        </div> 
       </div>
     </div>
     <!-- Education End -->
@@ -183,14 +166,14 @@
             <ul id="portfolio-filter">
               <li data-filter="*" class="filter-active">All</li>
               {% for c in categories  %}
-              <li data-filter="filter-{{c.name|first|capfirst}}">{{c.name}}</li>
+              <li data-filter="filter-{{c.name|cut:" "}}">{{c.name}}</li>
               {% endfor %}
             </ul>
           </div>
         </div>
         <div class="row portfolio-container">
           {% for p in projects  %}
-          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-{{p.category}} wow fadeInUp" data-wow-delay="0.0s">
+          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-{{p.category.name|cut:" "}} wow fadeInUp" data-wow-delay="0.0s">
               <div class="portfolio-wrap">
                   <div class="portfolio-img">
                       <img src="{{p.image.url}}" alt="Image">
@@ -210,9 +193,7 @@
       </div>
     </div>
    </div>
-<!-- Portfolio End -->
-
-{% comment %} still needs editing {% endcomment %}
+    <!-- Portfolio End -->
 
 
     <!-- Testimonial Start -->
