@@ -17,6 +17,8 @@
   <body data-spy="scroll" data-target=".navbar" data-offset="51">
     {% include 'header.html' %}
 
+    {% include 'messages.html' %}
+
     <!-- Hero Start -->
     <div class="hero" id="home">
       <div class="container-fluid">
@@ -166,7 +168,7 @@
             <ul id="portfolio-filter">
               <li data-filter="*" class="filter-active">All</li>
               {% for c in categories  %}
-              <li data-filter="filter-{{c.name|cut:" "}}">{{c.name}}</li>
+              <li data-filter=".filter-{{c.name|cut:" "}}">{{c.name}}</li>
               {% endfor %}
             </ul>
           </div>
@@ -178,15 +180,17 @@
                   <div class="portfolio-img">
                       <img src="{{p.image.url}}" alt="Image">
                       <div class="portfolio-overlay"></div>
-                      <a class="btn rounded preview-btn" href="{{p.previewlink}}">preview</a>
+                      <div class="d-flex flex-column align-items-center justify-space-between">                
+                        <a class="text-white preview-btn fw-3" href="{{p.previewlink}}">
+                          <i class="fas fa-search"></i>
+                          Preview
+                        </a>
+                      </div>
                   </div>
                   <div class="portfolio-text text-center">
                       <h3 >{{p.name|capfirst}}</h3>
                       <a class="btn" href="{{p.image.url}}" target="_blank" data-lightbox="portfolio">+</a> 
-                  </div>
-                  {% comment %} <div class="portfolio-text">
-                    <h3>{{p.languages}} </h3>             
-                   </div> {% endcomment %}                   
+                  </div>               
               </div>
           </div>
           {% endfor %}
@@ -223,6 +227,7 @@
     <!-- Testimonial End -->
 
     <!-- Contact Start -->
+    
     <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
       <div class="container-fluid">
         <div class="container">

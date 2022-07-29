@@ -13,6 +13,7 @@ class Skills(models.Model):
     def __str__(self):
         return f"{self.name} --- {self.skill_percent}"
 
+
 class Service(models.Model):
     icon_name = models.CharField(max_length=45)
     name = models.CharField(max_length=100)
@@ -25,6 +26,7 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Education(models.Model):
     course_Name = models.CharField(max_length=500)
@@ -41,6 +43,7 @@ class Education(models.Model):
     def __str__(self):
         return f"{self.course_Name} ----- {self.duration}"
 
+
 class Category(models.Model):
     name = models.CharField(max_length=50)
     
@@ -50,6 +53,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Project(models.Model):
     name = models.CharField(max_length= 300)
@@ -66,6 +70,7 @@ class Project(models.Model):
     def __str__(self):
         return  f"{self.name} --- {self.category}"
 
+
 class Testimonial(models.Model):
 
     customerName = models.CharField(max_length=300)
@@ -79,6 +84,7 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return f"{self.customerName } ---- {self.customerProfession}" 
+
 
 class Contacts(models.Model):
     name = models.CharField(max_length=300)

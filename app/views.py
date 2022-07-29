@@ -1,4 +1,5 @@
 from django.shortcuts import render , redirect
+from django.contrib import messages 
 from app.models import *
 from app.forms import *
 
@@ -18,9 +19,10 @@ def Home(request):
         contactform = ContactForm(request.POST or None)
         if contactform.is_valid():
             contactform.save()
+            messages.success(request, 'Contact Form Submittted')
             return redirect('/')
         else:
-            contactform.add_error("email", "please try again")
+            messages.error(request, 'Contact Form not Submittted')
             
     else:
         contactform = ContactForm()       
