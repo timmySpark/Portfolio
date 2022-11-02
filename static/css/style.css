@@ -25,7 +25,7 @@
 body {
   color: #797979;
   background: #ffffff;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1,
@@ -200,10 +200,11 @@ a:focus {
   .navbar {
     position: absolute;
     width: 100%;
-    padding: 30px 60px;
-    background: transparent !important;
+    padding: 20px 40px !important;
+    background-color:transparent !important;
     border-bottom: 1px dashed rgba(256, 256, 256, 0.2);
     z-index: 9;
+    color: #ffffff;
   }
 
   .navbar.nav-sticky {
@@ -212,7 +213,7 @@ a:focus {
   }
 
   .navbar .navbar-brand {
-    color: #ffffff;
+    color: #ffffff ;
   }
 
   .navbar.nav-sticky .navbar-brand {
@@ -222,7 +223,7 @@ a:focus {
   .navbar-light .navbar-nav .nav-link,
   .navbar-light .navbar-nav .nav-link:focus {
     padding: 10px 10px 8px 10px;
-    color: #ffffff;
+    color: #ffffff ;
     font-size: 15px;
     font-weight: 500;
   }
