@@ -17,7 +17,6 @@
   <body data-spy="scroll" data-target=".navbar" data-offset="51">
     {% include 'header.html' %}
 
-    {% include 'messages.html' %}
 
     <!-- Hero Start -->
     <div class="hero" id="home">
@@ -35,14 +34,14 @@
                 </div>
               </div>
               <div class="hero-btn">
-                <a class="btn rounded" href="">View Resume</a>
+                <a download class="btn rounded" href="{% static 'resume\Erinle-Timilehin-Resume.pdf' %}">Download Resume</a>
                 <a class="btn rounded" href="#contact">Contact Me</a>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-6 d-none d-md-block">
             <div class="hero-image">
-              <img src="{% static 'img/hero.png' %}" alt="Hero Image" />
+              <img src="{% static 'img/timi-pic-nobg.png' %}" alt="Hero Image" />
             </div>
           </div>
         </div>
