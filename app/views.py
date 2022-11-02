@@ -18,9 +18,7 @@ def Home(request):
         contactform = ContactForm(request.POST or None)
         if contactform.is_valid():
             contactform.save()
-            return redirect('/')
-        else:
-            contactform.errors('ContactForm not submitted')            
+            return redirect('/')           
     else:
         contactform = ContactForm()       
     
