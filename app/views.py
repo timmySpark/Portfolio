@@ -1,10 +1,12 @@
 from django.shortcuts import render , redirect
 from app.models import *
 from app.forms import *
+from django.views.decorators.csrf import csrf_protect
+
 
 
 # Create your views here.
-
+@csrf_protect 
 def Home(request):
     template_name = "index.html"
     skills = Skills.objects.all().order_by('-skill_percent')
